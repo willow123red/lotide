@@ -28,20 +28,3 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-// FUNCTION IMPLEMENTATION
-const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect;
-    console.log(`Example label: ${inspect(actual)}`);
-  if (eqObjects(actual,expected)) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const cd = { c: "1", d: ["2", 3] };
-  const dc = { d: ["2", 3], c: "1" };
-  assertObjectsEqual((eqObjects(cd, dc)), true); 
-  
-  const cd2 = { c: "1", d: ["2", 3, 4] };
-  assertObjectsEqual((eqObjects(cd, cd2)), false);
